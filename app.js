@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var cvEducation = document.getElementById('cvEducation');
             var cvWorkExperience = document.getElementById('cvWorkExperience');
             var cvSkills = document.getElementById('cvSkills');
-            var mainSection = document.querySelector('main');
+            var introduction = document.getElementById('introductions');
             if (cvName) {
                 cvName.innerText = data.name || '';
             }
@@ -116,19 +116,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (cvWorkExperience) {
                 cvWorkExperience.innerText = data.workExperience || '';
             }
+            if (introduction) {
+                introduction.innerText = data.introduction || '';
+            }
             if (cvSkills) {
-                cvSkills.innerText = data.skills || '';
                 var skillsArray = data.skills ? data.skills.split(',').map(function (skill) { return skill.trim(); }) : [];
                 cvSkills.innerHTML = skillsArray.join('<br>');
-            }
-            if (mainSection) {
-                mainSection.style.display = 'none';
-            }
-            if (cv) {
-                cv.style.display = 'block';
-            }
-            if (downloadPdf) {
-                downloadPdf.style.display = 'block';
             }
         }
     }

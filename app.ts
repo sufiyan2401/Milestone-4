@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const cvWorkExperience = document.getElementById('cvWorkExperience') as HTMLElement | null;
       const cvSkills = document.getElementById('cvSkills') as HTMLElement | null;
       const mainSection = document.querySelector('main') as HTMLElement | null;
-
+      const introuductions = document.querySelector('introuductions') as HTMLElement | null;
       if (cvName) {
         cvName.innerText = data.name || '';
       }
@@ -85,6 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (cvWorkExperience) {
         cvWorkExperience.innerText = data.workExperience || '';
       }
+      if (introduction) {
+        introduction.innerText = data.introduction || '';
+      }
+
       if (cvSkills) {
         cvSkills.innerText = data.skills || '';
         const skillsArray = data.skills ? data.skills.split(',').map(skill => skill.trim()) : [];
